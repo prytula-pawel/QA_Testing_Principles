@@ -19,6 +19,7 @@ This document decribes my view on Quality Assurance and Testing aproaches, rules
 - Tester/QA shall be involved as soon as possible in feature design and implementation to be able to give valid feedback regarding functionalities and planned solution
 - Well written and detailed test cases in comprehensive test plan shall be a baseline for further automation
 - Topic that cannot be fully covered by automation (external automation, remote desktop accesses, integration to 3rd party software) can be mock or partially mock and if needed they need to be executed manually
+- The higher the level of test the less mocking shall be involved (UT, FE only test sill ok, but no mocking in Integration E2E Tests)
 
 ## Browser/OS Support
 - Check end customer needs & environment to narrow down possible use of OSes and browsers (some industries will only have PCs for example or use tabled often)
@@ -32,10 +33,10 @@ This document decribes my view on Quality Assurance and Testing aproaches, rules
 
 ## CI/CD machinery 
 - CI/CD machine shall cover different level of test including final integration or E2E
-- the CI machine shall be build from scratch gradually, starting with basic smoke test
-- It does not have to be automatically triggered with every build from the start  - if test are not stable enough let them run on time basic (some slot to run during the day)
-- Improve CI loop test with some feedback (from bug triage, from customer etc)
-- CD without well developer, comprehensive test at many levels does not make sense and can cause more troubles then benefits (frequent rollback due to blocker bugs etc)
+- the CI machine (for testing) shall be build from scratch gradually, starting with basic smoke test
+- It does not have to be automatically triggered with every build from the start  - if test are not stable/mature enough let them run on time-interval basics (some fixed time-slots to run during the day), then gradually transform to be build-triggered
+- Improve CI loop test with feedback from bug triage, from customer, etc.
+- CD without well-developed, comprehensive test at many levels does not make sense and can cause more troubles then benefits (frequent rollback due to blocker bugs etc.)
 
 ## Testing Strategy
 (smoke, regression, feature, exploratory - schedule, duration, etc)
@@ -45,22 +46,24 @@ Build different test sets (smoke, regression, full)
 - Bug ticket flow shall be adjusted to company specific flow but in general:
 - bugs shall be raised by QA team and or PM/Designers
 - top prio production issues can have different flow as they need to be fixed ASAP
-- in ideal world bug shall go through Bug Triage where P and S are assigned
-- bug tickets is then assigned to a sprint and/or developer
+- in ideal world bug shall go through Bug Triage where Priority and Severity ranks are added/updated
+- bug tickets is then assigned to a relevent sprint and/or developer (depedning on Priority and Severity)
 - after bugfix is ready bug ticket is assigned back to QA team which shall always be the party officially confirming the fix (no self-closure by dev team)
-- bug is first tested internally on Staging before being release to PROD (if possible)
+- ideally bugs reports tickets shall always be closed by the reporter - so some exception are possible to the previous bullet-point (design bug closed by desinger)
+- bug is first tested internally on Staging/Test Environment before being release to PROD (if possible)
 - after PROD release bug fix is re-confirmed on PROD env
-- High prio / blocker bugs shall have special flow (for example patch release could be released outside or regular release schedule)
+- High prio / blocker bugs shall have special flow (for example patch release could be released outside or regular release schedule -> see: Release Process)
 
 ## Release Process
 - Release shall be planned in regular intervals (major, minor)
+- Each release shall have clearly defined list of changes (features, bug-fixed, improvement), preferable as list of commits
 - Hot fix release (patch) - does not have to be planned but shall only include top priority bug fixes or other crucial changes (security)
 - We shall stick to the schedule and do not make to many exceptions
 
 ## Bug Triage & Test improvements based on bugs
 - Bug triage / review meeting shall be held regularly in the project
 - PM, QA Lead, Dev Lead shall participate (at least + more people if needed but the audience shall be relatively small)
-- Each new raised bug since the last meeting shall be review in context of priority and severity and possibly assigned to a team (if possible, depending on strategy pull/push)
+- Each new raised bug since the last meeting shall be review in context of priority and severity and possibly assigned to a team (if possible, depending on strategy pull/push -> see Bug Handling Process)
 - Top prio blocker bugs can be handled different way (prioritized outside of the meeting)
 - In case there is a big push on developing new features in the project and bugs are being neglected, some improvements shall be introduce to keep bug fixing flow alive and do not allow number of defects to grow constantly (timeboxing, fixing low hanging fruits, etc)
 - During the meeting or on later fix after the bug fix some improvements shall be initiated in test scenarios to extend the coverage to allow the bug to be found next time (manual or automated)
@@ -71,7 +74,7 @@ Build different test sets (smoke, regression, full)
 
 ## Test case / test plan reviews
 - Test cases shall be review internally in QA a team (both manual and automated)
-- There shall be multiple focus on the review, considering factor as: logical flow of the TCes, test plan covering all needed reqs, test data validity and consistency, covering of any negative scenarios/flows etc
+- There shall be multiple focus on the review, considering factor as: logical flow of the TCes (including preconditions), test plan covering all needed reqs, test data validity and consistency, covering of any negative scenarios/flows etc
 - In case of the new features - influencing the functionality of already existing features, some wider review might be needed to incorporate new feature into existing TC or add new TC for the feature and adjust old ones
 
 ## Requirements coverage
