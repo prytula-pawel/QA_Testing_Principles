@@ -1,8 +1,12 @@
 # QA and Testing Principle
-**Author**: Pawel Prytula
-**Last updated**: 03/03/2025
+**Author**: Pawel Prytula  
+**Last updated**: 03/03/2025  
+**Version**: 0.1
 
-This document decribes my view on Quality Assurance and Testing aproaches, rules, processes, princinples that can be applied in IT projects in various industries. This is a generic document and principles and it’s weights my differ from project to project depending on many factor like project phase and maturity, project size, industry, available technology, QA team size, available budget or time contraints. 
+## Sumarry
+
+This document decribes my view on <ins>Quality Assurance and Testing aproaches</ins>, rules, processes, princinples that can be applied in IT projects in various industries. This is a generic document and principles and it’s weights my differ from project to project depending on many factor like project phase and maturity, project size, industry, available technology, QA team size, available budget or time contraints. 
+  
 
 ## Document History
 **Version 0.1** - first draft, document structure
@@ -39,7 +43,7 @@ This document decribes my view on Quality Assurance and Testing aproaches, rules
 - CD without well-developed, comprehensive test at many levels does not make sense and can cause more troubles then benefits (frequent rollback due to blocker bugs etc.)
 
 ## Testing Strategy
-(smoke, regression, feature, exploratory - schedule, duration, etc)
+smoke, regression, feature, exploratory - schedule, duration, etc)
 Build different test sets (smoke, regression, full)
 
 ## Bug handling process 
