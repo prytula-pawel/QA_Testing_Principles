@@ -91,7 +91,7 @@ Bug ticket flow shall be adjusted to company specific flow but in general:
 - Requirement coverage matrix
 - Traceability of requirements to Test Case (bidirectional)
 
-## DOCUMENTATION, TEAM ORGANIZATION
+## DOCUMENTATION, TEST TOOLS, TEAM ORGANIZATION
 ### Create QA corner for a Project (Docu)
 - Using documentation management tool in the project (Confluence, Notion, etc) create a page for QA team
 - This section shall cover all the basic that are needed for every QA: list of required tools, seting up env, test process and flows etc
@@ -101,7 +101,24 @@ Bug ticket flow shall be adjusted to company specific flow but in general:
 - QA Lead shall draw the strategy and approach to testing and quality in whole organization
 - DEV to test ratio ⅓ to ⅕ on average depending on industry, team size, quality needs etc.
 - Avoid overloading and/or marginalizing QA efforts (Dev/Test ratio much lover then ⅕, project delays to accumlate on final QA testing giving not enough time for quality checks) 
-- QA in project shall always be a whole team (ogranization) effort (avoid shifitnig all the responsibility of quality to QA team(
+- QA in project shall always be a whole team (ogranization) effort (avoid shifitnig all the responsibility of quality to QA team)
+
+### Test Management Tool
+- There is a variety of TM tools availbale on the market -> Choose test managment tool matching your project requirements
+- There could be a various criteria for selecting good Test Managment tools, some of them could be:
+  * Stand-alone or web based/cloud solution
+  * Folder like TC structure for better organization
+  * Ability to create TCes with steps, expected results, actual results
+  * Ability to marke TC priorty, status and other custom fields
+  * Test Plan building based on single TC, folder, filtering
+  * Test Runs with Configurations
+  * Ability to attached Screenshot to test results
+  * Some build in reporting and ability to export test reports (PDF, etc)
+  * Integrations with bug-tracking system or CI/CD solution
+  * Decent price, easly scalable for more users
+- Make sure that there are some free plans or trial period you could try the tool first
+- Small and quick research to compare 2-3 best available option to choose from is always a good idea
+- If you are first QA in the project and this is you role to select TM Tool, present you research finding to wider group of user (developers, tech leads, etc.)
 
 ### Error handling in the app/ Input field validation
 - or in geneal any validation?
